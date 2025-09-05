@@ -1,0 +1,57 @@
+#include <unistd.h>
+#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <signal.h>
+#include <string.h>
+
+int SECONDS = 0; // Used so main and sigalarm_handler can be tracked by both functions
+int SIGUSR_CNT = 0; // Keeps track of number of times we have received SIGUSR1
+
+void sigalarm_handler() {
+	if (SECONDS == 0) { 
+		printf("PID and current time: prints every 3 seconds.\nType Ctrl-C to end the program.\n");		
+	}
+	SECONDS += 3; // Makes sure first statement does not print again.
+	time_t current_time = time(NULL);	
+	printf("PID: %d CURRENT TIME: %s", getpid(), asctime(localtime(&current_time)));
+	alarm(3);
+	return;
+}
+void sigusr_handler() {
+	printf("Received SIGUSR1, user signal 1 counted.\n");
+	SIGUSR_CNT += 1;
+}
+
+void sigint_handler() { 
+		printf("\nSIGINT handled.\n");
+		printf("SIGUSR was handled %d times. Exiting now.\n", SIGUSR_CNT);
+		exit(0);
+	}
+
+int main(int argc, char **argv) {
+	struct sigaction sa;
+	memset(&sa, 0, sizeof(sa));
+	// Set SIGALRM
+	sa.sa_handler = sigalarm_handler;
+	if (sigaction(SIGALRM, &sa, NULL) != 0) { 
+		printf("Error binding sigalrm handler");
+		exit(1);
+	}
+	// Set SIGUSR1
+	sa.sa_handler = sigusr_handler;
+	if (sigaction(SIGUSR1, &sa, NULL) != 0) { 
+		printf("Error binding sigusr handler");
+		exit(1);
+	}
+	// Set SIGINT
+	sa.sa_handler = sigint_handler;
+	if (sigaction(SIGINT, &sa, NULL) != 0) { 
+		printf("Error binding sigint handler");
+		exit(1);
+	}
+	alarm(3);
+	while(1) {
+	}
+}

@@ -1,0 +1,7 @@
+Script started on 2025-01-30 00:01:20-06:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="136" LINES="39"]
+[?2004h(365) rtu@royal-15:~/private/cs354/A02$ exit./simple_sequence[11Plogoutcd p1/[4Plscd cs354ls[Kcd ~/private[6Plogouts[K -a[Kobjdump -d decode.o > objectfile_contents.txt[K[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[K -a[Kogoutcd ~/privatels[Kcd cs354ls[Kcd p1/logout./simple_sequenceexit[K[Kexit./simple_sequence[11Plogoutcd p1/[4Plscd cs354ls[K[K[K[7mgcc simple_sequence.c -Wall -m32 -std=gnu99 -o simple_sequence[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgcc simple_sequence.c -Wall -m32 -std=gnu99 -o simple_sequence
+[?2004l[?2004h(366) rtu@royal-15:~/private/cs354/A02$ gcc simple_sequence.c -Wall -m32 -std=gnu99 -o simple_sequence[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K./simple_sequence
+[?2004l1,2,3,4,5,6,7,8,9,10[?2004h(367) rtu@royal-15:~/private/cs354/A02$ exit
+[?2004lexit
+
+Script done on 2025-01-30 00:01:49-06:00 [COMMAND_EXIT_CODE="0"]
